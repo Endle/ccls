@@ -40,10 +40,12 @@ jobs:
     - name: Cache LLVM packages
       uses: actions/cache@v3
       with:
+        key: ${{ runner.os }}-build-${{ env.cache-name }}
         path: |
           ~/.llvm_prebuilt
     - name: DownloadLLVM
       run: |
+        [[ -d ~/.llvm_prebuilt ]] || mkdir ~/.llvm_prebuilt
         cd ~/.llvm_prebuilt
         ls ~/.llvm_prebuilt
         [[ -f  clang+llvm-18.1.8-x86_64-linux-gnu-ubuntu-18.04.tar.xz  ]] || wget https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.8/clang+llvm-18.1.8-x86_64-linux-gnu-ubuntu-18.04.tar.xz
