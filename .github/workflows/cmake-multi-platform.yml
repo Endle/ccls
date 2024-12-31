@@ -53,7 +53,7 @@ jobs:
         [[ -f  clang+llvm-18.1.8-x86_64-linux-gnu-ubuntu-18.04.tar.xz  ]] || wget https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.8/clang+llvm-18.1.8-x86_64-linux-gnu-ubuntu-18.04.tar.xz
         [[ -d ~/llvm_extract ]] || mkdir ~/llvm_extract
         cd ~/llvm_extract
-        tar -xf /.llvm_prebuilt/clang+llvm-18.1.8-x86_64-linux-gnu-ubuntu-18.04.tar.xz
+        tar -xf ~/.llvm_prebuilt/clang+llvm-18.1.8-x86_64-linux-gnu-ubuntu-18.04.tar.xz
         ls
     
     - name: Configure CMake
