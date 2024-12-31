@@ -58,7 +58,7 @@ jobs:
     
     - name: Configure
       run: |
-        cmake -S. -BRelease -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=~/.llvm_prebuilt/clang+llvm-18.1.8-x86_64-linux-gnu-ubuntu-18.04.tar.xz
+        cmake -S. -BRelease -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=~/llvm_extract/clang+llvm-18.1.8-x86_64-linux-gnu-ubuntu-18.04.tar.xz
         #cmake --build Release
       
 
