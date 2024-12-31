@@ -38,8 +38,9 @@ jobs:
         cmake --version
 
     - name: Cache LLVM packages
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
+        save-always: true
         key: ${{ runner.os }}-build-${{ env.cache-name }}
         path: |
           ~/.llvm_prebuilt
