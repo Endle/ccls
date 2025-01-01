@@ -58,6 +58,9 @@ jobs:
 
     - name: Clean other llvm
       run: |
+        apt-get update
+        apt-get purge llvm-16
+        apt-get purge llvm-17
         ls /usr/lib/
         
     - name: Configure
