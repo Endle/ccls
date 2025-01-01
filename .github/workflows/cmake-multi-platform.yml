@@ -54,9 +54,9 @@ jobs:
 
     - name: Clean other llvm
       run: |
-        apt-get update
-        apt-get purge -y llvm*
-        apt-get install -y llvm-18 clang
+        sudo apt-get update
+        sudo apt-get purge -y llvm*
+        sudo apt-get install -y llvm-18 clang
         ls /usr/lib/
         
     - name: Check Env
