@@ -32,11 +32,7 @@ jobs:
       run: |
         echo "build-output-dir=${{ github.workspace }}/build" >> "$GITHUB_OUTPUT"
 
-    - name: Check Env
-      run: |
-        clang --version
-        cmake --version
-        echo $CC
+
 
     - name: Cache LLVM packages
       uses: actions/cache@v4
@@ -59,9 +55,15 @@ jobs:
     - name: Clean other llvm
       run: |
         apt-get update
-        apt-get purge llvm-16
-        apt-get purge llvm-17
+        apt-get purge -y llvm*
+        apt-get install -y llvm-18 clang
         ls /usr/lib/
+        
+    - name: Check Env
+      run: |
+        clang --version
+        cmake --version
+        echo $CC        
         
     - name: Configure
       run: |
