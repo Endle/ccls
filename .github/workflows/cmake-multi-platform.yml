@@ -56,6 +56,7 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get purge -y llvm* clang*
+        sudo rm -rf /usr/lib/llvm*
         sudo apt-get install -y llvm-18 clang
         ls /usr/lib/llvm*
         
